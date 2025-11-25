@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TotallyLegitCrypto</title>
+    <link rel="icon" type="image/x-icon" href="Images/Favicon.ico">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <!-- Logo and Store Name -->
+            <div class="logo-section">
+                <a href="Index.html" class="home-link">
+                <img src="Images/Logo.png" alt="CryptoCoin Logo" class="logo">
+                <h1 class="store-name">TotallyLegitCrypto.zw</h1>
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html#products" class="nav-link">Products</a></li>
+                    <li><a href="feedback.html" class="nav-link">Feedback <i class="fa fa-comments" aria-hidden="true"></i></a></li>
+                    <li><a href="about_us.html" class="nav-link">About Us <i class="fa fa-user-circle" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="nav-link login-btn">Log In <i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+                </ul>
+            </nav>
+
+            <!-- Shopping Cart Button -->
+            <button class="cart-btn" onclick="toggleCart()" aria-label="Shopping cart">
+                <span class="cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Shopping Cart Popup -->
+    <div class="cart-popup" id="cartPopup">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Shopping Cart</h3>
+                <button class="close-cart" onclick="toggleCart()">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            <div class="cart-totals">
+                <div class="total-line">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">€0.00</span>
+                </div>
+                <div class="total-line">
+                    <span>VAT (25%):</span>
+                    <span id="vat">€0.00</span>
+                </div>
+                <div class="total-line">
+                    <span>Handling Fee:</span>
+                    <span id="handlingFee">€0.00</span>
+                </div>
+                <div class="total-line total">
+                    <span>Total:</span>
+                    <span id="total">€0.00</span>
+                </div>
+            </div>
+            <button class="clear-cart-btn" onclick="clearCart()">Clear All Items</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Back Button -->
+            <a href="index.html" class="back-button">← Back to Store</a>
+
+            <!-- Product Detail Section -->
+            <section class="product-detail">
+                <div class="product-detail-content">
+                    <!-- Product Images -->
+                    <div class="product-images">
+                        <img src="https://via.placeholder.com/500x400/28a745/ffffff?text=Gaming+Laptop+Pro" 
+                             alt="Gaming Laptop Pro - Main View" class="main-product-image" id="mainImage">
+                        
+                        <div class="thumbnail-images">
+                            <img src="https://via.placeholder.com/100x80/28a745/ffffff?text=Front" 
+                                 alt="Front view" class="thumbnail active" 
+                                 onclick="changeMainImage('https://via.placeholder.com/500x400/28a745/ffffff?text=Gaming+Laptop+Pro')">
+                            <img src="https://via.placeholder.com/100x80/20c997/ffffff?text=Side" 
+                                 alt="Side view" class="thumbnail" 
+                                 onclick="changeMainImage('https://via.placeholder.com/500x400/20c997/ffffff?text=Side+View')">
+                            <img src="https://via.placeholder.com/100x80/17a2b8/ffffff?text=Open" 
+                                 alt="Open laptop view" class="thumbnail" 
+                                 onclick="changeMainImage('https://via.placeholder.com/500x400/17a2b8/ffffff?text=Open+Laptop')">
+                        </div>
+                    </div>
+
+                    <!-- Product Details -->
+                    <div class="product-details">
+                        <h1 class="product-title">Gaming Laptop Pro</h1>
+                        <p class="product-price-large">€899.99</p>
+                        
+                        <div class="product-description-long">
+                            <p>
+                                The Gaming Laptop Pro is designed for serious gamers and professionals who demand 
+                                exceptional performance. Featuring a powerful Intel Core i7 processor and NVIDIA 
+                                GeForce RTX 4060 graphics card, this laptop delivers smooth gameplay and excellent 
+                                productivity performance.
+                            </p>
+                            <p>
+                                With 16GB of DDR5 RAM and a 1TB NVMe SSD, you'll have plenty of memory and storage 
+                                for all your games, applications, and files. The 15.6-inch Full HD display with 
+                                144Hz refresh rate ensures crisp visuals and fluid motion for competitive gaming.
+                            </p>
+                            <p>
+                                Key features include advanced cooling system, RGB backlit keyboard, Wi-Fi 6 
+                                connectivity, and a long-lasting battery. Whether you're gaming, streaming, 
+                                or working on demanding projects, this laptop has the power to handle it all.
+                            </p>
+                        </div>
+
+                        <!-- Quantity and Add to Cart -->
+                        <div class="quantity-selector">
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" id="quantity" class="quantity-input" min="1" max="10" value="1">
+                            <button class="add-to-cart-large" onclick="addMultipleToCart()">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                        <!-- Product Specifications -->
+                        <div class="product-specs">
+                            <h3>Specifications</h3>
+                            <ul>
+                                <li><strong>Processor:</strong> Intel Core i7-13700H</li>
+                                <li><strong>Graphics:</strong> NVIDIA GeForce RTX 4060 8GB</li>
+                                <li><strong>Memory:</strong> 16GB DDR5 RAM</li>
+                                <li><strong>Storage:</strong> 1TB NVMe SSD</li>
+                                <li><strong>Display:</strong> 15.6" Full HD 144Hz</li>
+                                <li><strong>Operating System:</strong> Windows 11 Home</li>
+                                <li><strong>Battery:</strong> Up to 6 hours</li>
+                                <li><strong>Weight:</strong> 2.3 kg</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Product Reviews Section -->
+            <section class="product-reviews">
+                <h3>Customer Reviews</h3>
+                <div class="reviews-grid">
+                    <!-- Review 1 -->
+                    <article class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Alex Gaming Pro</span>
+                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <p class="review-text">
+                            "This laptop is a beast! Running all my favorite games at max settings with no issues. 
+                            The cooling system works perfectly even during long gaming sessions. Highly recommend 
+                            for serious gamers!"
+                        </p>
+                    </article>
+
+                    <!-- Review 2 -->
+                    <article class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Sarah Designer</span>
+                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <p class="review-text">
+                            "Perfect for my design work! The display quality is outstanding and it handles Adobe 
+                            Creative Suite without any lag. The build quality feels premium and the keyboard is 
+                            very comfortable for long work sessions."
+                        </p>
+                    </article>
+
+                    <!-- Review 3 -->
+                    <article class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Mike StreamGamer</span>
+                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <p class="review-text">
+                            "Excellent for streaming and gaming simultaneously. The performance is incredible and 
+                            I love the RGB keyboard lighting. Battery life is decent for a gaming laptop. 
+                            Definitely worth the investment!"
+                        </p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Navigation Links -->
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Copyright Information -->
+                <div class="footer-info">
+                    <p>&copy; 2025 TotallyLegitCrypto. All rights reserved by the pirkanmaan paroni &co.</p>
+                    <p>Student Project by: Kasper Ruusunko</p>
+                    <p>Course: Ohjelmistokehityksen perusteet</p>
+                    <p>School: Tredu @Hepolamminkatu</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('techstore_cart')) || [];
+
+        // Product information
+        const productInfo = {
+            name: 'Gaming Laptop Pro',
+            price: 899.99,
+            image: 'https://via.placeholder.com/500x400/28a745/ffffff?text=Gaming+Laptop+Pro'
+        };
+
+        // Initialize cart display
+        updateCartDisplay();
+
+        function toggleCart() {
+            const cartPopup = document.getElementById('cartPopup');
+            cartPopup.style.display = cartPopup.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function addToCart(name, price, image) {
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+            }
+            
+            localStorage.setItem('techstore_cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        function addMultipleToCart() {
+            const quantity = parseInt(document.getElementById('quantity').value);
+            
+            for (let i = 0; i < quantity; i++) {
+                addToCart(productInfo.name, productInfo.price, productInfo.image);
+            }
+            
+            // Show feedback
+            const button = document.querySelector('.add-to-cart-large');
+            const originalText = button.textContent;
+            button.textContent = `Added ${quantity} item${quantity > 1 ? 's' : ''} to cart!`;
+            button.style.background = '#28a745';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '#007bff';
+            }, 2000);
+        }
+
+        function removeFromCart(name) {
+            const itemIndex = cart.findIndex(item => item.name === name);
+            if (itemIndex > -1) {
+                if (cart[itemIndex].quantity > 1) {
+                    cart[itemIndex].quantity -= 1;
+                } else {
+                    cart.splice(itemIndex, 1);
+                }
+            }
+            localStorage.setItem('techstore_cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        function removeAllFromCart(name) {
+            cart = cart.filter(item => item.name !== name);
+            localStorage.setItem('techstore_cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        function clearCart() {
+            cart = [];
+            localStorage.setItem('techstore_cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cartItems');
+            const cartCount = document.getElementById('cartCount');
+            
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-info">
+                            <h4>${item.name}</h4>
+                            <p>€${item.price.toFixed(2)} each</p>
+                            <div class="quantity-controls">
+                                <button onclick="removeFromCart('${item.name}')">-</button>
+                                <span>Qty: ${item.quantity}</span>
+                                <button onclick="addToCart('${item.name}', ${item.price}, '${item.image}')">+</button>
+                            </div>
+                        </div>
+                        <button class="remove-item" onclick="removeAllFromCart('${item.name}')">&times;</button>
+                    </div>
+                `).join('');
+            }
+
+            updateTotals();
+        }
+
+        function updateTotals() {
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const vat = subtotal * 0.25;
+            const handlingFee = subtotal > 0 && subtotal < 500 ? 4.99 : 0;
+            const total = subtotal + vat + handlingFee;
+
+            document.getElementById('subtotal').textContent = `€${subtotal.toFixed(2)}`;
+            document.getElementById('vat').textContent = `€${vat.toFixed(2)}`;
+            document.getElementById('handlingFee').textContent = `€${handlingFee.toFixed(2)}`;
+            document.getElementById('total').textContent = `€${total.toFixed(2)}`;
+        }
+
+        // Change main image function
+        function changeMainImage(imageSrc) {
+            document.getElementById('mainImage').src = imageSrc;
+            
+            // Update active thumbnail
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Close cart when clicking outside
+        document.addEventListener('click', function(event) {
+            const cartPopup = document.getElementById('cartPopup');
+            const cartBtn = document.querySelector('.cart-btn');
+            
+            if (!cartPopup.contains(event.target) && !cartBtn.contains(event.target)) {
+                cartPopup.style.display = 'none';
+            }
+        });
+    </script>
+
+    <style>
+        /* Additional styles for product page */
+        .product-specs {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .product-specs h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .product-specs ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-specs li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-specs li:last-child {
+            border-bottom: none;
+        }
+
+        .product-specs strong {
+            color: #007bff;
+        }
+    </style>
+</body>
+</html>

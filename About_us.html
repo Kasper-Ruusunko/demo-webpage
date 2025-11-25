@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TotallyLegitCrypto</title>
+    <link rel="icon" type="image/x-icon" href="Images/Favicon.ico">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <!-- Logo and Store Name -->
+            <div class="logo-section">
+                <a href="Index.html" class="home-link">
+                <img src="Images/Logo.png" alt="CryptoCoin Logo" class="logo">
+                <h1 class="store-name">TotallyLegitCrypto.zw</h1>
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html#products" class="nav-link">Products</a></li>
+                    <li><a href="feedback.html" class="nav-link">Feedback <i class="fa fa-comments" aria-hidden="true"></i></a></li>
+                    <li><a href="about_us.html" class="nav-link">About Us <i class="fa fa-user-circle" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="nav-link login-btn">Log In <i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+                </ul>
+            </nav>
+
+            <!-- Shopping Cart Button -->
+            <button class="cart-btn" onclick="toggleCart()" aria-label="Shopping cart">
+                <span class="cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Shopping Cart Popup -->
+    <div class="cart-popup" id="cartPopup">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Shopping Cart</h3>
+                <button class="close-cart" onclick="toggleCart()">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            <div class="cart-totals">
+                <div class="total-line">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">€0.00</span>
+                </div>
+                <div class="total-line">
+                    <span>VAT (25%):</span>
+                    <span id="vat">€0.00</span>
+                </div>
+                <div class="total-line">
+                    <span>Handling Fee:</span>
+                    <span id="handlingFee">€0.00</span>
+                </div>
+                <div class="total-line total">
+                    <span>Total:</span>
+                    <span id="total">€0.00</span>
+                </div>
+            </div>
+            <button class="clear-cart-btn" onclick="clearCart()">Clear All Items</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="hero">
+            <div class="container">
+                <h2>About TechStore</h2>
+                <p>Learn more about our story, mission, and commitment to excellence</p>
+            </div>
+        </section>
+
+        <!-- About Content -->
+        <section class="about-page">
+            <div class="container">
+                <div class="about-content">
+                    <!-- Company Story Section -->
+                    <div class="about-section">
+                        <h2>Our Story</h2>
+                        <p>
+                            Founded in 2020, TechStore began as a small startup with a big dream: to make cutting-edge 
+                            technology accessible to everyone. What started as a passion project by a group of tech enthusiasts 
+                            has grown into a trusted destination for quality electronics and exceptional customer service.
+                        </p>
+                        <p>
+                            Our journey started when our founders noticed a gap in the market for reasonably priced, 
+                            high-quality tech products backed by knowledgeable customer support. We believed that 
+                            technology should enhance people's lives, not complicate them. This philosophy remains 
+                            at the core of everything we do today.
+                        </p>
+                    </div>
+
+                    <!-- Products Section -->
+                    <div class="about-section">
+                        <h2>Our Products</h2>
+                        <p>
+                            At TechStore, we carefully curate our product selection to ensure we offer only the best 
+                            in each category. From powerful gaming laptops that deliver exceptional performance to 
+                            smartphones that keep you connected with the latest features, every product in our store 
+                            has been tested and approved by our expert team.
+                        </p>
+                        <p>
+                            We specialize in four main categories: high-performance laptops for gaming and productivity, 
+                            cutting-edge smartphones with advanced camera systems, premium wireless audio equipment, 
+                            and versatile tablets for work and entertainment. Each product comes with comprehensive 
+                            warranty coverage and our commitment to customer satisfaction.
+                        </p>
+                    </div>
+
+                    <!-- Mission Section -->
+                    <div class="about-section">
+                        <h2>Our Mission</h2>
+                        <p>
+                            We're committed to providing our customers with the latest technology at competitive prices, 
+                            backed by exceptional customer service and technical support. Our team of technology experts 
+                            is always ready to help you find the perfect solution for your needs, whether you're a 
+                            professional looking for productivity tools or a gaming enthusiast seeking the ultimate experience.
+                        </p>
+                        <p>
+                            We believe in building long-term relationships with our customers through trust, reliability, 
+                            and continuous innovation. Our goal is not just to sell products, but to be your trusted 
+                            technology partner throughout your digital journey.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Customer Reviews Section -->
+                <div class="reviews-section">
+                    <h2>What Our Customers Say</h2>
+                    <div class="reviews-grid">
+                        <!-- Review 1 -->
+                        <article class="review-card">
+                            <div class="review-header">
+                                <span class="reviewer-name">Sarah Johnson</span>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                            <p class="review-text">
+                                "Excellent service and fast delivery! I bought the Gaming Laptop Pro and it exceeded 
+                                my expectations. The customer support team was incredibly helpful in helping me choose 
+                                the right specifications for my needs."
+                            </p>
+                        </article>
+
+                        <!-- Review 2 -->
+                        <article class="review-card">
+                            <div class="review-header">
+                                <span class="reviewer-name">Michael Chen</span>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                            <p class="review-text">
+                                "TechStore is my go-to place for all tech purchases. Great prices, authentic products, 
+                                and they always deliver on time. The wireless headphones I bought have amazing sound 
+                                quality and the battery life is outstanding."
+                            </p>
+                        </article>
+
+                        <!-- Review 3 -->
+                        <article class="review-card">
+                            <div class="review-header">
+                                <span class="reviewer-name">Emma Rodriguez</span>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                            <p class="review-text">
+                                "I had an issue with my initial order and the customer service team resolved it 
+                                immediately with no hassle. They even expedited shipping for the replacement. 
+                                This is how customer service should be done!"
+                            </p>
+                        </article>
+
+                        <!-- Review 4 -->
+                        <article class="review-card">
+                            <div class="review-header">
+                                <span class="reviewer-name">David Thompson</span>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                            <p class="review-text">
+                                "The Professional Tablet I purchased has been perfect for my work needs. 
+                                The display quality is fantastic and it handles all my design software smoothly. 
+                                TechStore's expertise really shows in their product selection."
+                            </p>
+                        </article>
+
+                        <!-- Review 5 -->
+                        <article class="review-card">
+                            <div class="review-header">
+                                <span class="reviewer-name">Lisa Park</span>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                            <p class="review-text">
+                                "Amazing shopping experience from start to finish! The website is easy to navigate, 
+                                the product descriptions are detailed and accurate, and my Smartphone Ultra arrived 
+                                perfectly packaged. Highly recommend TechStore to anyone!"
+                            </p>
+                        </article>
+
+                        <!-- Review 6 -->
+                        <article class="review-card">
+                            <div class="review-header">
+                                <span class="reviewer-name">James Wilson</span>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                            <p class="review-text">
+                                "I've been a customer for over two years now and TechStore consistently delivers 
+                                quality products at competitive prices. Their after-sales support is exceptional - 
+                                they really care about customer satisfaction beyond just making the sale."
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Navigation Links -->
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Copyright Information -->
+                <div class="footer-info">
+                    <p>&copy; 2025 TotallyLegitCrypto. All rights reserved by the pirkanmaan paroni &co.</p>
+                    <p>Student Project by: Kasper Ruusunko</p>
+                    <p>Course: Ohjelmistokehityksen perusteet</p>
+                    <p>School: Tredu @Hepolamminkatu</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Cart functionality (same as other pages)
+        let cart = JSON.parse(localStorage.getItem('techstore_cart')) || [];
+
+        // Initialize cart display
+        updateCartDisplay();
+
+        function toggleCart() {
+            const cartPopup = document.getElementById('cartPopup');
+            cartPopup.style.display = cartPopup.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function addToCart(name, price, image) {
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+            }
+            
+            localStorage.setItem('techstore_cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        function removeFromCart(name) {
+            const itemIndex = cart.findIndex(item => item.name === name);
+            if (itemIndex > -1) {
+                if (cart[itemIndex].quantity > 1) {
+                    cart[itemIndex].quantity -= 1;
+                } else {
+                    cart.splice(itemIndex, 1);
+                }
+            }
+            localStorage.setItem('techstore_cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        function removeAllFromCart(name) {
+            cart = cart.filter(item => item.name !== name);
+            localStorage.setItem('techstore_cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        function clearCart() {
+            cart = [];
+            localStorage.setItem('techstore_cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cartItems');
+            const cartCount = document.getElementById('cartCount');
+            
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-info">
+                            <h4>${item.name}</h4>
+                            <p>€${item.price.toFixed(2)} each</p>
+                            <div class="quantity-controls">
+                                <button onclick="removeFromCart('${item.name}')">-</button>
+                                <span>Qty: ${item.quantity}</span>
+                                <button onclick="addToCart('${item.name}', ${item.price}, '${item.image}')">+</button>
+                            </div>
+                        </div>
+                        <button class="remove-item" onclick="removeAllFromCart('${item.name}')">&times;</button>
+                    </div>
+                `).join('');
+            }
+
+            updateTotals();
+        }
+
+        function updateTotals() {
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const vat = subtotal * 0.25;
+            const handlingFee = subtotal > 0 && subtotal < 500 ? 4.99 : 0;
+            const total = subtotal + vat + handlingFee;
+
+            document.getElementById('subtotal').textContent = `€${subtotal.toFixed(2)}`;
+            document.getElementById('vat').textContent = `€${vat.toFixed(2)}`;
+            document.getElementById('handlingFee').textContent = `€${handlingFee.toFixed(2)}`;
+            document.getElementById('total').textContent = `€${total.toFixed(2)}`;
+        }
+
+        // Close cart when clicking outside
+        document.addEventListener('click', function(event) {
+            const cartPopup = document.getElementById('cartPopup');
+            const cartBtn = document.querySelector('.cart-btn');
+            
+            if (!cartPopup.contains(event.target) && !cartBtn.contains(event.target)) {
+                cartPopup.style.display = 'none';
+            }
+        });
+    </script>
+
+    <style>
+        /* Additional styles specific to about us page */
+        .about-page {
+            padding: 2rem 0;
+        }
+
+        .reviews-section {
+            margin-top: 4rem;
+        }
+
+        .reviews-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: #333;
+        }
+    </style>
+</body>
+</html>

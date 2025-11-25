@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TotallyLegitCrypto</title>
+    <link rel="icon" type="image/x-icon" href="Images/Favicon.ico">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <!-- Logo and Store Name -->
+            <div class="logo-section">
+                <a href="Index.html" class="home-link">
+                <img src="Images/Logo.png" alt="CryptoCoin Logo" class="logo">
+                <h1 class="store-name">TotallyLegitCrypto.zw</h1>
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html#products" class="nav-link">Products</a></li>
+                    <li><a href="feedback.html" class="nav-link">Feedback <i class="fa fa-comments" aria-hidden="true"></i></a></li>
+                    <li><a href="about_us.html" class="nav-link">About Us <i class="fa fa-user-circle" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="nav-link login-btn">Log In <i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+                </ul>
+            </nav>
+
+            <!-- Shopping Cart Button -->
+            <button class="cart-btn" onclick="toggleCart()" aria-label="Shopping cart">
+                <span class="cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Shopping Cart Popup -->
+    <div class="cart-popup" id="cartPopup">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Shopping Cart</h3>
+                <button class="close-cart" onclick="toggleCart()">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            <div class="cart-totals">
+                <div class="total-line">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">€0.00</span>
+                </div>
+                <div class="total-line">
+                    <span>VAT (25%):</span>
+                    <span id="vat">€0.00</span>
+                </div>
+                <div class="total-line">
+                    <span>Handling Fee:</span>
+                    <span id="handlingFee">€0.00</span>
+                </div>
+                <div class="total-line total">
+                    <span>Total:</span>
+                    <span id="total">€0.00</span>
+                </div>
+            </div>
+            <button class="clear-cart-btn" onclick="clearCart()">Clear All Items</button>
+            <button class="checkout-cart-btn" onclick="">Move to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h2>Welcome to TotallyLegitCrypto</h2>
+                <p>Discover the latest rugpulls & memecoins</p>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products" id="products">
+            <div class="container">
+                <h2>$Rugpulls of the day</h2>
+                <div class="products-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <img src="Images/SevenCoin.png" alt="SevenCoin"
+                            class="product-image" onclick="window.location.href='product_1.html'">
+                        <div class="product-info">
+                            <h3>$6SevenCoin</h3>
+                            <p class="product-description">I see seven!</p>
+                            <p class="product-price">€6.79</p>
+                            <div class="product-actions">
+                                <button class="more-info-btn" onclick="window.location.href='product_1.html'">More
+                                    Info</button>
+                                <button class="add-to-cart-btn"
+                                    onclick="addToCart('$6SevenCoin', 6.79, 'Images/SevenCoin.png')">Add
+                                    to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <img src="Images/MidBoss.png" alt="MidbossCoin"
+                            class="product-image" onclick="window.location.href='product_2.html'">
+                        <div class="product-info">
+                            <h3>$MidBoss</h3>
+                            <p class="product-description">placeholder</p>
+                            <p class="product-price">€649.99</p>
+                            <div class="product-actions">
+                                <button class="more-info-btn" onclick="window.location.href='product_2.html'">More
+                                    Info</button>
+                                <button class="add-to-cart-btn"
+                                    onclick="addToCart('Smartphone Ultra', 649.99, 'https://via.placeholder.com/300x200/dc3545/ffffff?text=Phone')">Add
+                                    to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <img src="https://via.placeholder.com/300x200/ffc107/000000?text=Headphones"
+                            alt="ValkealaCoin" class="product-image"
+                            onclick="window.location.href='product_3.html'">
+                        <div class="product-info">
+                            <h3>€ValkealaCoin</h3>
+                            <p class="product-description">placeholder</p>
+                            <p class="product-price">€199.99</p>
+                            <div class="product-actions">
+                                <button class="more-info-btn" onclick="window.location.href='product_3.html'">More
+                                    Info</button>
+                                <button class="add-to-cart-btn"
+                                    onclick="addToCart('Wireless Headphones', 199.99, 'https://via.placeholder.com/300x200/ffc107/000000?text=Headphones')">Add
+                                    to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 4 -->
+                    <article class="product-card">
+                        <img src="https://via.placeholder.com/300x200/17a2b8/ffffff?text=Tablet" alt="PirkanmaanParoni"
+                            class="product-image" onclick="window.location.href='product_4.html'">
+                        <div class="product-info">
+                            <h3>¥PirkanmaaBaron</h3>
+                            <p class="product-description">placeholder</p>
+                            <p class="product-price">€449.99</p>
+                            <div class="product-actions">
+                                <button class="more-info-btn" onclick="window.location.href='product_4.html'">More
+                                    Info</button>
+                                <button class="add-to-cart-btn"
+                                    onclick="addToCart('Professional Tablet', 449.99, 'https://via.placeholder.com/300x200/17a2b8/ffffff?text=Tablet')">Add
+                                    to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Navigation Links -->
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Copyright Information -->
+                <div class="footer-info">
+                    <p>&copy; 2025 TotallyLegitCrypto. All rights reserved by the pirkanmaan paroni &co.</p>
+                    <p>Student Project by: Kasper Ruusunko</p>
+                    <p>Course: Ohjelmistokehityksen perusteet</p>
+                    <p>School: Tredu @Hepolamminkatu</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Cart Functionality -->
+    <script>
+        // Cart data structure
+        let cart = JSON.parse(localStorage.getItem('techstore_cart')) || [];
+
+        // Initialize cart display
+        updateCartDisplay();
+
+        // Toggle cart popup visibility
+        function toggleCart() {
+            const cartPopup = document.getElementById('cartPopup');
+            cartPopup.style.display = cartPopup.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Add item to cart
+        function addToCart(name, price, image) {
+            const existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+            }
+
+            // Save to localStorage for persistence between pages
+            localStorage.setItem('techstore_cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        // Remove single item from cart
+        function removeFromCart(name) {
+            const itemIndex = cart.findIndex(item => item.name === name);
+            if (itemIndex > -1) {
+                if (cart[itemIndex].quantity > 1) {
+                    cart[itemIndex].quantity -= 1;
+                } else {
+                    cart.splice(itemIndex, 1);
+                }
+            }
+            localStorage.setItem('techstore_cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        // Remove all of a specific item from cart
+        function removeAllFromCart(name) {
+            cart = cart.filter(item => item.name !== name);
+            localStorage.setItem('techstore_cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        // Clear entire cart
+        function clearCart() {
+            cart = [];
+            localStorage.setItem('techstore_cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        // Update cart display
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cartItems');
+            const cartCount = document.getElementById('cartCount');
+
+            // Update cart count
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+
+            // Update cart items display
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-info">
+                            <h4>${item.name}</h4>
+                            <p>€${item.price.toFixed(2)} each</p>
+                            <div class="quantity-controls">
+                                <button onclick="removeFromCart('${item.name}')">-</button>
+                                <span>Qty: ${item.quantity}</span>
+                                <button onclick="addToCart('${item.name}', ${item.price}, '${item.image}')">+</button>
+                            </div>
+                        </div>
+                        <button class="remove-item" onclick="removeAllFromCart('${item.name}')">&times;</button>
+                    </div>
+                `).join('');
+            }
+
+            // Update totals
+            updateTotals();
+        }
+
+        // Calculate and update totals
+        function updateTotals() {
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const vat = subtotal * 0.25;
+            const handlingFee = subtotal > 0 && subtotal < 500 ? 4.99 : 0;
+            const total = subtotal + vat + handlingFee;
+
+            document.getElementById('subtotal').textContent = `€${subtotal.toFixed(2)}`;
+            document.getElementById('vat').textContent = `€${vat.toFixed(2)}`;
+            document.getElementById('handlingFee').textContent = `€${handlingFee.toFixed(2)}`;
+            document.getElementById('total').textContent = `€${total.toFixed(2)}`;
+        }
+
+        // Close cart when clicking outside
+        document.addEventListener('click', function (event) {
+            const cartPopup = document.getElementById('cartPopup');
+            const cartBtn = document.querySelector('.cart-btn');
+
+            if (!cartPopup.contains(event.target) && !cartBtn.contains(event.target)) {
+                cartPopup.style.display = 'none';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
